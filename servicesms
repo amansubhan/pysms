@@ -1,0 +1,25 @@
+#!/bin/bash
+export LD_LIBRARY_PATH=/opt/instantclient_12_1:/opt/instantclient_12_1
+export ORACLE_HOME=/opt/instantclient_12_1
+cd /opt/pySMS
+
+case $1 in 
+ restart)
+	kill -9 $(ps -e | grep python | awk {'print $1'});
+	echo SMS Gateway stopped
+	sleep 1
+	python3 /opt/pySMS/servicesms.py & > /dev/null 2>&1;
+	echo SMS Gateway started
+	;;
+ stop)
+	kill -9 $(ps -e | grep python | awk {'print $1'});
+	echo SMS Gateway stopped
+	;;
+ start)
+	python3 /opt/pySMS/servicesms.py & > /dev/null 2>&1;
+	echo SMS Gateway started
+	;;
+ *)
+	echo 'please use options {start, stop, restart}'
+	;;
+esac

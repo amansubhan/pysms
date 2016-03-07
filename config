@@ -1,0 +1,21 @@
+## Service SMS config file
+[API]
+api = 'ITS'
+url = 'http://180.178.135.203:24555/api'
+proxy = 'http://147.55.14.3:8080/'
+#proxy = ''
+
+[LOG]
+smslog = 'log/sms.log'
+errorlog = 'log/error.log'
+
+[ORACLE]
+enabled='Y'
+host='147.55.11.15'
+port='1521'
+sid='ora9'
+dbuser='hr2000'
+dbpassword='scinide007'
+smstable='SMS'
+logtable='SMSLOG'
+failedtable='SMSERRORLOG'

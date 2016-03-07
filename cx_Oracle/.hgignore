@@ -1,0 +1,8 @@
+syntax: glob
+*.pyc
+build/
+dist/
+doc/.build/
+html
+cx_Oracle.egg-info/
+MANIFEST
